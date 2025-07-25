@@ -73,10 +73,7 @@ chatbot-ia_python/
 └── README.md  
 ```
 
-## 👨‍💻 Autor
-Ing. Cristian Díaz
+## 👨‍💻 Autores
+  Dumas Restrepo
+  Paula Márquez
 
----
-<p align="center">
-  <img width="300" src="https://i.imgur.com/YYf2LgH.png">
-</p>
