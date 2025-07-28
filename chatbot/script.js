@@ -1,6 +1,13 @@
 const input = document.getElementById("mensaje");
 const chat = document.getElementById("subtitulo");
-const boton = document.getElementById("button");
+const boton = document.getElementById("boton-enviar");
+
+boton.addEventListener("click", enviarMensaje);
+input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        enviarMensaje();
+    }
+});
 
 async function enviarMensaje() {
     const texto = input.value.trim();
@@ -13,10 +20,9 @@ async function enviarMensaje() {
     agregarMensaje(texto, "usuario");
     input.value = "";
 
-    agregarMensaje("Escribiendo...");
+    agregarMensaje("Escribiendo...", "bot");
     const respuesta = await obtenerRespuesta(texto);
     actualizarUltimoMensaje(respuesta);
-
 }
 
 function agregarMensaje(texto, clase) {
@@ -39,7 +45,7 @@ async function obtenerRespuesta(mensaje) {
         const res = await fetch("http://localhost:8000/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ prompt: mensaje })
+            body: JSON.stringify({ pregunta: mensaje })
         });
         const data = await res.json();
         return data.respuesta;

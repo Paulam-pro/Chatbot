@@ -1,5 +1,5 @@
-# 🤖 Chatbot API experto en Python
-Este proyecto es una API REST basada en FastAPI que funciona como un chatbot experto en Python. Utiliza el modelo Mistral a través de OpenRouter (compatible con la API de OpenAI) para generar respuestas conversacionales.
+# 🤖 Chatbot API de Recomendación Cursos de Programación
+EEste es un chatbot con interfaz web que recomienda cursos de programación según el lenguaje, el nivel de experiencia y los intereses del usuario. Utiliza inteligencia artificial a través de **OpenRouter**
 
 ## 🚀 Requisitos
 - Python 3.8 o superior
@@ -36,11 +36,11 @@ uvicorn main:app --reload
 ## 📬 Ejemplo de uso
 Petición POST a /chat:
 ```json
-{"pregunta": "¿Qué es una lista en Python?"}  
+{"pregunta": "¿Qué curso me recomiendas para aprender JavaScript?"}  
 ```
 Respuesta esperada:
 ```json
-{"respuesta": "Una lista en Python es una colección ordenada y mutable de elementos..."}  
+{"respuesta": "e recomiendo 'JavaScript Moderno' de freeCodeCamp, o el curso profesional en Platzi..."}  
 ```
 
 ## 🐳 Despliegue con Docker
